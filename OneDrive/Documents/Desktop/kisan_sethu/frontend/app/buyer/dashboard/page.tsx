@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
-import { ListingCard } from "@/components/listing/ListingCard";
+import { AnimatedListingCard } from "@/components/listing/AnimatedListingCard";
 import { LoadingSpinner } from "@/components/common/LoadingSpinner";
 import { EmptyState } from "@/components/common/EmptyState";
+import { PageTransition } from "@/components/common/PageTransition";
 import { Search, Filter } from "lucide-react";
 import type { Listing } from "@/types";
 
@@ -193,9 +194,9 @@ export default function BuyerDashboard() {
 
       {/* Listings Grid */}
       {filteredListings.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredListings.map((listing) => (
-            <ListingCard key={listing.id} listing={listing} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {filteredListings.map((listing, idx) => (
+            <AnimatedListingCard key={listing.id} listing={listing} delay={idx * 0.05} />
           ))}
         </div>
       ) : (

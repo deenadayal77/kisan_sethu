@@ -25,15 +25,15 @@ export function Navbar() {
             <span className="font-semibold text-lg hidden sm:inline">Kisan Sethu</span>
           </Link>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             {user ? (
               <>
-                <span className="text-sm text-text-secondary hidden sm:inline">
+                <span className="text-xs sm:text-sm text-text-secondary hidden sm:inline">
                   {user.full_name}
                 </span>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center gap-2 px-3 py-2 text-sm text-text-primary hover:bg-primary/10 rounded-lg transition-colors"
+                  className="flex items-center gap-2 px-2 sm:px-3 py-2 text-sm text-text-primary hover:bg-primary/10 rounded-lg transition-colors min-h-[44px] min-w-[44px] justify-center sm:justify-start"
                 >
                   <LogOut size={18} />
                   <span className="hidden sm:inline">Logout</span>
@@ -43,13 +43,13 @@ export function Navbar() {
               <>
                 <Link
                   href="/login"
-                  className="text-sm text-primary hover:text-primary/80 transition-colors"
+                  className="text-xs sm:text-sm text-primary hover:text-primary/80 transition-colors px-2 sm:px-4 py-2 rounded-lg hover:bg-primary/10 min-h-[44px] flex items-center"
                 >
                   Login
                 </Link>
                 <Link
                   href="/register"
-                  className="text-sm px-4 py-2 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors"
+                  className="text-xs sm:text-sm px-3 sm:px-4 py-2 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors min-h-[44px] flex items-center"
                 >
                   Register
                 </Link>
