@@ -1,0 +1,7 @@
+backend/.venv/
+backend/kisansethu.db
+__pycache__/
+*.py[cod]
+.env
+backend/uploads/*
+!backend/uploads/.gitkeep
